@@ -4,6 +4,6 @@ $properties = @(
     @{n='TimeStamp';e={$_.TimeCreated}}
     @{n='DCname';e={$_.Properties[4].Value}}
 )
-Get-WinEvent -ComputerName DOMAINCONTROLLER1 -FilterHashTable @{LogName='Security'; ID=4740} | 
+Get-WinEvent -ComputerName cbsdc3 -FilterHashTable @{LogName='Security'; ID=4740} | 
 Select $properties |
 Export-csv C:\Users\$env:username\Desktop\LockedUsers.csv -NoTypeInformation -Encoding UTF8
