@@ -1,0 +1,1 @@
+Get-ADUser -Filter * -SearchBase "OU=Users UT SLC,OU=CelticBank,DC=cb,DC=local" -Properties * | Select-Object -Property Name,EmailAddress,Department
