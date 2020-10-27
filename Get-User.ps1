@@ -1,1 +1,1 @@
-Get-ADUser -Filter * -SearchBase "OU=Users UT SLC,OU=CelticBank,DC=cb,DC=local" -Properties * | Select-Object -Property Name,EmailAddress,Department
+Get-ADUser -SearchBase "OU=Users IT,OU=CelticBank,DC=cb,DC=local" -Properties * -Filter {Enabled -eq $true} | Select-Object Name, mail, Department, telephoneNumber, Title, IPPhone | Export-Csv -Path C:\Users\deadpool\Desktop\users.csv
